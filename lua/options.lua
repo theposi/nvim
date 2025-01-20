@@ -1,4 +1,11 @@
-vim.opt.guicursor = ""
+require "nvchad.options"
+
+-- add yours here!
+
+-- local o = vim.o
+-- o.cursorlineopt ='both' -- to enable cursorline!
+--
+-- vim.opt.guicursor = ""
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -27,5 +34,3 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
-vim.opt.colorcolumn = "80"
