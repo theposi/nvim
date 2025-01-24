@@ -5,20 +5,37 @@ return {
 		opts = require "configs.conform",
 	},
 
-	-- These are some examples, uncomment them if you want to see them work!
+	-- LSP
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
 			require "configs.lspconfig"
 		end,
 	},
+
+	-- LazyGit
 	{
 		"kdheepak/lazygit.nvim",
-		requires = {
+		lazy = true,
+		cmd = {
+			"LazyGit",
+			"LazyGitConfig",
+			"LazyGitCurrentFile",
+			"LazyGitFilter",
+			"LazyGitFilterCurrentFile",
+		},
+		-- optional for floating window border decoration
+		dependencies = {
 			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" }
 		}
 	},
 
+	-- Header 
 	{
 		"Diogo-ss/42-header.nvim",
 		cmd = { "Stdheader" },
@@ -31,6 +48,8 @@ return {
 			}
 		end,
 	},
+
+	-- Dashboard 
 	{
 		'nvimdev/dashboard-nvim',
 		event = 'VimEnter',
@@ -52,5 +71,16 @@ return {
 			}
 		end,
 		dependencies = { {'nvim-tree/nvim-web-devicons'}}
+	},
+
+	-- Animate 
+	{
+		"echasnovski/mini.animate",
+		event = "VeryLazy",
+		opts = function(_, opts)
+			opts.scroll = {
+				enable = false,
+			}
+		end,
 	},
 }

@@ -6,18 +6,25 @@
 local M = {}
 
 M.base46 = {
-	theme = "horizon",
-  transparency = true,
+	theme = "nightfox",
+	transparency = true,
+	changed_themes = {
+		nightfox = {
+			base_30 = {
+				grey_fg = "#f0e6ff",
+			},
+		},
+	},
 
-	 hl_override = {
-	 	Comment = { italic = true },
-	 	["@comment"] = { italic = true },
-	 },
+	hl_override = {
+		Comment = { italic = true },
+		["@comment"] = { italic = true },
+	},
 }
 
 -- M.nvdash = { load_on_startup = true }
 M.ui = {
-  statusline = { theme = 'vscode' }
+  statusline = { theme = 'vscode_colored' }
 }
 
 return M

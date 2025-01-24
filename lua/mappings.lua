@@ -112,8 +112,8 @@ vim.keymap.set("n", "<leader><leader>", function()
     vim.cmd("so")
 end, { desc = "Source current file" })
 
--- lazygit
-vim.keymap.set("n", "<leader>lg", vim.cmd.LazyGit, { desc = "Open the Git panel" })
-
 -- header
 vim.api.nvim_set_keymap('n', '<leader>h', ':Stdheader<CR>', { noremap = true, silent = true, desc = "42 header" })
+
+-- cheatsheet
+vim.keymap.set("n", "<leader>ch", "<cmd> NvCheatsheet <CR>", { desc = "Cheatshee" })
